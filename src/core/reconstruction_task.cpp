@@ -235,6 +235,11 @@ void ReconstructionTask::reconstruction()
                     std::string msg = "Save to " + std::string(save_path[0].S().Text());
                     Logger::instance().log(LogLevel::Info, msg);
                 }
+
+                if (!running_.load())
+                {
+                    return;
+                }
             }
             catch (const HException &exception)
             {
