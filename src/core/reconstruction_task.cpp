@@ -442,7 +442,7 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
 
     if (src_mat.cols > src_mat.rows)
     {
-#ifndef WIN32
+#ifndef _WIN32
         window_width = std::min(src_mat.cols, static_cast<int>(max_size));
 #else
         window_width = min(src_mat.cols, static_cast<int>(max_size));
@@ -451,7 +451,7 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
     }
     else
     {
-#ifndef WIN32
+#ifndef _WIN32
         window_height = std::min(src_mat.rows, static_cast<int>(max_size));
 #else
         window_height = min(src_mat.rows, static_cast<int>(max_size));
@@ -506,7 +506,18 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
             src_mat.copyTo(temp);
             cv::rectangle(temp, box_, cv::Scalar(0, 255, 0), 8);
         }
-        cv::imshow("Set Roi", temp);
+
+        try
+        {
+            cv::imshow("Set Roi", temp);
+        }
+        catch (const cv::Exception &e)
+        {
+            Logger::instance().log(LogLevel::Info, "Window closed or unavailable. ROI set to default.");
+            roi_selected = false;
+            break;
+        }
+
         int key = cv::waitKey(15);
 
         if (key == 13)
@@ -515,10 +526,10 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
             break;
         }
 
-        if (cv::getWindowProperty("Set Roi", cv::WND_PROP_VISIBLE) < 1)
+        if (key == 27)
         {
-            Logger::instance().log(LogLevel::Info, "Window closed. ROI set to default.");
             roi_selected = false;
+            Logger::instance().log(LogLevel::Info, "ESC pressed. ROI set to default.");
             break;
         }
     }

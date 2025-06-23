@@ -1,8 +1,8 @@
 {
     "params": {
-        "dataRoot": "D:/Projects/GenerateCloudApp/data",
-        "caltabDescription": "D:/Projects/GenerateCloudApp/data/caltab_400.descr",
-        "outputCloudRoot": "D:/Projects/GenerateCloudApp/data/cloud",
+        "dataRoot": "/home/zzz/Projects/GenerateCloudApp/data",
+        "caltabDescription": "/home/zzz/Projects/GenerateCloudApp/data/caltab_400.descr",
+        "outputCloudRoot": "/home/zzz/Projects/GenerateCloudApp/data/cloud",
         "calibrationImagesNumber": 59,
         "calibrationMinThreshold": 169,
         "calibrationStepsNumber": 1200,

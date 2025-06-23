@@ -470,7 +470,7 @@ int CalibrationTask::setThreshold(const cv::Mat &src_mat)
 
     if (src_mat.cols > src_mat.rows)
     {
-#ifndef WIN32
+#ifndef _WIN32
         window_width = std::min(src_mat.cols, static_cast<int>(max_size));
 #else
         window_width = min(src_mat.cols, static_cast<int>(max_size));
@@ -479,7 +479,7 @@ int CalibrationTask::setThreshold(const cv::Mat &src_mat)
     }
     else
     {
-#ifndef WIN32
+#ifndef _WIN32
         window_height = std::min(src_mat.rows, static_cast<int>(max_size));
 #else
         window_height = min(src_mat.rows, static_cast<int>(max_size));
