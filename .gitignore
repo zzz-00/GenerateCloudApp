@@ -1,0 +1,8 @@
+/.vscode
+/build
+/bin/GenerateCloud*
+/bin/imgui.ini
+/data/bil/*
+/data/caltab/*
+/data/cloud/*
+/data/saved poses/*

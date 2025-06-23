@@ -1,0 +1,24 @@
+{
+    "params": {
+        "dataRoot": "D:/Projects/GenerateCloudApp/data",
+        "caltabDescription": "D:/Projects/GenerateCloudApp/data/caltab_400.descr",
+        "outputCloudRoot": "D:/Projects/GenerateCloudApp/data/cloud",
+        "calibrationImagesNumber": 59,
+        "calibrationMinThreshold": 169,
+        "calibrationStepsNumber": 1200,
+        "calibrationThickness": 0.01,
+        "calibrationMaxLightPlaneError": 0.05,
+        "reconstructionMinThreshold": 125,
+        "reconstructionRoiRow1": 438,
+        "reconstructionRoiCol1": 274,
+        "reconstructionRoiRow2": 751,
+        "reconstructionRoiCol2": 1009,
+        "imgWidth": 1280,
+        "imgHeight": 800
+    },
+    "mode": {
+        "saveCloudFlag": true,
+        "setRoiFlag": true,
+        "selectEntireFrame": false
+    }
+}
